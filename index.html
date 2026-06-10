@@ -15,9 +15,10 @@
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   :root { --ink:#0B1020; --paper:#F5EFE4; --fade:#8B90A0; --accent:#FF7A1A; }
-  html, body { height: 100%; }
+  html { background: var(--ink); transition: background 400ms ease; }
+  html, body { height: 100%; overscroll-behavior-y: none; }
   body {
-    background: var(--ink); color: var(--paper);
+    background: transparent; color: var(--paper);
     font-family: 'Inter', system-ui, sans-serif;
     display: flex; justify-content: center;
     transition: background 400ms ease;
@@ -155,7 +156,7 @@ function go(n) { ep = clamp(n); save(); render(); }
 function render() {
   const cur = EPS[ep - 1];
   const st = STATUS[cur[2]];
-  document.body.style.background =
+  document.documentElement.style.background =
     "radial-gradient(ellipse 120% 60% at 50% -10%, " + st.color + "26, transparent 60%), #0B1020";
 
   $("epcount").textContent = "Episode " + ep + " of 500";
