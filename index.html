@@ -57,14 +57,15 @@
   #epinput[type=number] { -moz-appearance: textfield; }
   #season { font-size: 13px; color: var(--fade); letter-spacing: 2px; padding-top: 8px; }
   #status { font-size: 64px; line-height: 1; letter-spacing: 4px; padding-top: 12px; transition: color 300ms ease; }
-  #title { font-size: 17px; font-weight: 500; padding: 8px 16px 0; }
-  #note { font-size: 13px; color: var(--fade); padding-top: 4px; }
+  #title { font-size: 17px; font-weight: 500; padding: 8px 16px 0; min-height: 2.9em; display: flex; align-items: center; justify-content: center; }
+  #note { font-size: 13px; color: var(--fade); }
+  #extra { height: 60px; margin-top: 10px; display: flex; align-items: center; justify-content: center; }
   #jump {
-    display: none; margin-top: 20px; font-family: 'Bebas Neue', sans-serif;
+    display: none; font-family: 'Bebas Neue', sans-serif;
     font-size: 20px; letter-spacing: 2px; padding: 12px 22px; border-radius: 12px;
     background: var(--accent); color: #1A0E00; border: none;
   }
-  #canonnote { display: none; font-size: 12px; color: var(--fade); padding-top: 12px; }
+  #canonnote { display: none; font-size: 12px; color: var(--fade); }
   #canonnote b { color: var(--accent); font-weight: 600; }
   #nextbtn {
     width: 100%; margin-top: 32px; padding: 16px 0; font-size: 24px; letter-spacing: 3px;
@@ -72,7 +73,7 @@
     border: 1px solid rgba(255,122,26,0.33); font-family: 'Bebas Neue', sans-serif;
   }
   #upnext-label { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: var(--fade); padding-top: 28px; }
-  #upnext { display: flex; flex-direction: column; gap: 4px; padding-top: 8px; }
+  #upnext { display: flex; flex-direction: column; gap: 4px; padding-top: 8px; flex-grow: 1; justify-content: space-evenly; }
   .uprow {
     display: flex; align-items: center; gap: 12px; text-align: left;
     padding: 9px 12px; border-radius: 10px; background: rgba(245,239,228,0.04);
@@ -108,8 +109,10 @@
     <div id="status" class="bebas"></div>
     <div id="title"></div>
     <div id="note"></div>
-    <button id="jump"></button>
-    <div id="canonnote"></div>
+    <div id="extra">
+      <button id="jump"></button>
+      <div id="canonnote"></div>
+    </div>
   </div>
 
   <button id="nextbtn">FINISHED &mdash; NEXT EPISODE</button>
