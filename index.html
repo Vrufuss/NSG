@@ -22,6 +22,8 @@
     display: flex; justify-content: center;
     transition: background 400ms ease;
   }
+  button, input { touch-action: manipulation; }
+  button { -webkit-user-select: none; user-select: none; cursor: pointer; }
   .bebas { font-family: 'Bebas Neue', sans-serif; }
   .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
   #app {
@@ -34,7 +36,7 @@
   #brand span { color: var(--accent); }
   #savestate, #epcount { font-size: 11px; color: var(--fade); }
   #epcount { font-size: 12px; margin-top: 2px; }
-  #hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 24px; }
+  #hero { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 16px; flex-grow: 1; }
   #navrow { display: flex; align-items: center; gap: 12px; width: 100%; justify-content: center; }
   .navbtn {
     width: 56px; height: 72px; font-size: 30px; border-radius: 12px;
